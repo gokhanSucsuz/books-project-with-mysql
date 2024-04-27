@@ -12,7 +12,7 @@ export const UpdateBook = () => {
 
   const fetchAllBooks = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/books/${bookId}`)
+      const res = await axios.get(`https://books-project-with-mysql-server.vercel.app/books/${bookId}`)
       setValues(res.data[0])
       console.log(res.data[0])
     } catch (error) {
@@ -32,7 +32,7 @@ export const UpdateBook = () => {
   const handleClick = async (e) => {
     e.preventDefault()
     try {
-      await axios.put(`http://localhost:8080/books/${bookId}`, book)
+      await axios.put(`https://books-project-with-mysql-server.vercel.app/books/${bookId}`, book)
       navigate("/")
     } catch (error) {
       if (error) console.log(error)

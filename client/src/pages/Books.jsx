@@ -8,7 +8,7 @@ export const Books = () => {
 
     const fetchAllBooks = async () => {
         try {
-            const res = await axios.get("http://localhost:8080/books")
+            const res = await axios.get("https://books-project-with-mysql-server.vercel.app/books")
             setBooks(res.data)
 
         } catch (error) {
@@ -23,7 +23,7 @@ export const Books = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/books/${id}`)
+            await axios.delete(`https://books-project-with-mysql-server.vercel.app/${id}`)
             fetchAllBooks()
         } catch (error) {
             if (error) console.log(error)
