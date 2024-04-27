@@ -19,7 +19,7 @@ export const AddBook = () => {
     const handleClick = async (e) => {
         e.preventDefault()
         try {
-            await axios.post("https://books-project-with-mysql-server.vercel.app/books", book)
+            await axios.post("http://localhost:8080/books", book)
             navigate("/")
         } catch (error) {
             if (error) console.log(error)
